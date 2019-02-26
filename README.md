@@ -13,9 +13,9 @@ Copy “binary_seq.py” to an appropriate directory, then mark the file as exec
 - Prodigal 2.6.3
 
 ## Dependencies
-NCBI BLAST
-Bio python
-Prodigal 
+- NCBI BLAST
+- Bio python
+- Prodigal 
 
 ## Quick Start
 ```% python binary_seq.py -g gb_file_list -o prefix_of output_file```
@@ -35,19 +35,19 @@ Prodigal
 
 ## Options
 -g, --gb
-- GeneBank file list (GB file must be designated with full PATH)
+- GeneBank file list (GB file must be designated with full PATH)  
 -f, --fasta
-- Fasta file list (strain<TAB>fasta_file, fasta file must be designated with full PATH).
+- Fasta file list (strain<TAB>fasta_file, fasta file must be designated with full PATH).  
 -o, --out
-- Prefix of output file name.
+- Prefix of output file name.  
 -e, --evalue
-- E value (default = 0.001) setting for BLASTN'
+- E value (default = 0.001) setting for BLASTN'  
 -c, --cover
-- Cover ratio against query sequence length in BLASTN (default = 80)'
+- Cover ratio against query sequence length in BLASTN (default = 80)'  
 -i, --identity
-- Threshold of sequence identity in BLASTN (default = 80)'
+- Threshold of sequence identity in BLASTN (default = 80)'  
 --predict
-- Predict all ORFs using Prodigal, including gb files with annotation data.
+- Predict all ORFs using Prodigal, including gb files with annotation data.  
 --num_process
 - Set the number of processes (default = 4) running simultaneously.
 
