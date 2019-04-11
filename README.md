@@ -8,7 +8,7 @@ Copy “binary_seq.py” to an appropriate directory, then mark the file as exec
 
 ## Tested environment
 - CentOS 7
-- Python 2.7.15
+- Python 2.7.15 and 3.5.7
 - BLAST 2.7.1
 - Prodigal 2.6.3
 
