@@ -7,6 +7,7 @@ import os
 import tempfile
 import time
 import sys
+import glob # 2020/01/10
 import numpy as np
 import math
 import random
@@ -132,7 +133,7 @@ g_factor = args.shareing_factor / 100
 j_factor = args.joint_factor / 100
 grouping_flag = args.grouping
 
-current_ver = 'v0.6_190225'
+current_ver = 'v0.6_200110'
 
 def gb_orf(gb):
 	record = SeqIO.read(gb, "genbank")
@@ -187,14 +188,9 @@ def orf_check(orf, newfile): #20180123
 	stdout, stderr = blastn_cline()
 	blast_results = stdout.rstrip().split('\n')
 	stdout=''
-	os.remove(db_name + '.nhr')
-	os.remove(db_name + '.nin')
-	os.remove(db_name + '.nog')
-	os.remove(db_name + '.nsd')
-	os.remove(db_name + '.nsi')
-	os.remove(db_name + '.nsq')
-	os.remove(db_name + '.nhd')
-	os.remove(db_name + '.nhi')
+	dbfiles = glob.glob(db_name + '.n*') #2020/01/10
+	for dbfile in dbfiles:
+		os.remove(dbfile)
 	
 	orf_tempdic = {}
 	i = 0
@@ -580,12 +576,9 @@ if __name__ == '__main__':
 		for values in positive_list:
 			binary_ndary[values[0]][values[1]] = 1
 
-		os.remove(out_name + '.nhr')
-		os.remove(out_name + '.nin')
-		os.remove(out_name + '.nog')
-		os.remove(out_name + '.nsd')
-		os.remove(out_name + '.nsi')
-		os.remove(out_name + '.nsq')
+		dbfiles = glob.glob(out_name + '.n*') #2020/01/10
+		for dbfile in dbfiles:
+			os.remove(dbfile)
 
 	orf_dic.clear
 
